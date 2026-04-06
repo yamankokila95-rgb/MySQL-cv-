@@ -12,7 +12,9 @@ const pool = mysql.createPool({
   port:     process.env.DB_PORT || 3306,
   waitForConnections: true,
   connectionLimit: 10,
-  ssl: process.env.DB_SSL === "false" ? { rejectUnauthorized: false } : false,
+  ssl: {
+  rejectUnauthorized: false,
+},
 });
 
 // Helper: run a query and return all rows
