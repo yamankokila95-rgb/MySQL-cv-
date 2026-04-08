@@ -1,5 +1,6 @@
 // Central API helper — reads base URL from env, attaches JWT automatically
-export const API_BASE = import.meta.env.VITE_API_URL ?? "";
+export const API_BASE =
+  import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export const getToken = () => localStorage.getItem("adminToken");
 
